@@ -45,6 +45,8 @@ const Invitation = () => {
             15 de marzo de 2026
             <br />
             Ceremonia: 3:00 p. m.
+            <br />
+            Lugar: La Casa Del Lago Amatitlán
           </p>
         </motion.div>
 
