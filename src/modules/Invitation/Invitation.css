@@ -1,0 +1,92 @@
+.invitation {
+  background-color: #f7f4ef; /* tono crema elegante */
+  color: #2b2b2b;
+  padding: 4rem 2rem;
+}
+
+.invitation-container {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start; /* 🔑 importante */
+}
+
+/* 📷 Imagen */
+/*.invitation-image img {
+  width: 100%;
+  max-height: 420px;        /* controla el alto 
+  display: block;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: grayscale(10%);
+  transition: transform 1.2s ease;
+}*/
+
+.invitation-image img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  max-height: 420px;
+}
+
+
+.invitation-image:hover img {
+  transform: scale(1.02);
+}
+
+
+/* ✍️ Texto */
+.invitation-content {
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding-top: 1rem; /* 🔑 baja el bloque completo */
+}
+
+/* Título */
+.invitation-content .section-title {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  line-height: 1.2;
+  text-align: right;
+
+  margin-top: -3rem; /* 🔑 SUBE el título */
+}
+
+/* Texto cuerpo */
+.invitation-text {
+  font-family: "WeddingBody", serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 320px;
+  color: #444;
+  text-align: left;
+}
+
+/* 📱 Mobile */
+@media (max-width: 1200px) {
+  .invitation-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .invitation-content {
+    padding-top: 0;
+  }
+
+  .invitation-content .section-title {
+    margin-top: 0;
+  }
+
+  .invitation-image img {
+    max-height: 280px;
+  }
+
+  .invitation-text {
+    margin: 0 auto;
+  }
+}
