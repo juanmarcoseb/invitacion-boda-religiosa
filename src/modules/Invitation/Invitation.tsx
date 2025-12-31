@@ -35,8 +35,8 @@ const Invitation = () => {
           </h2>
 
           <p className="invitation-text">
-            Con la bendición de nuestras familias,
-            Marcos y Naty
+            Con la bendición Dios y de nuestras familias,
+            nosotros, Marcos y Naty,
             les invitamos a compartir con nosotros la alegría de unir 
             nuestras vidas en matrimonio.
             <br /><br />
