@@ -23,12 +23,9 @@
 /* Carta principal */
 .invitation-card {
   width: 100vw;
-  max-width: 920px;
+  max-width: 1200px;
   min-width: 600px;
-
   height: auto;
-  display: block;
-  border-radius: 2px;
 }
 
 /* RSVP */
@@ -54,10 +51,10 @@
   }
 
   .invitation-card {
-    width: 288vw;
-    max-width: 680px;
-    min-width: unset;
+    width: 100%;
+    max-width: 100%;
   }
+
 
   .invitation-rsvp {
     width: 88vw;
