@@ -46,6 +46,10 @@
 /* 📱 Mobile */
 @media (max-width: 768px) {
   .carousel {
-    height: 90vh;   /* solo aquí se usa vh */
+    --carousel-height: 70vh;
+  }
+
+  .carousel-track {
+    animation-duration: 60s; /* más lenta = menos GPU */
   }
 }
