@@ -6,6 +6,7 @@
   justify-content: center;
 
   padding: 3rem 2rem;
+  overflow-x: hidden; /* 🔑 evita espacio blanco lateral */
 }
 
 /* Wrapper general */
@@ -14,7 +15,7 @@
   max-width: 1400px;
 
   display: flex;
-  flex-direction: row;            /* 🔑 desktop: lado a lado */
+  flex-direction: row;            /* desktop: lado a lado */
   align-items: center;
   justify-content: center;
   gap: 0;
@@ -22,13 +23,11 @@
 
 /* Carta principal */
 .invitation-card {
-  width: 100vw;
-  max-width: 920px;
+  width: 90vw;
+  max-width: 1200px;
   min-width: 600px;
-
   height: auto;
   display: block;
-  border-radius: 2px;
 }
 
 /* RSVP */
@@ -45,23 +44,29 @@
 /* 📱 Mobile */
 @media (max-width: 768px) {
   .invitation {
-    padding: 2rem 1.5rem;
+    padding: 2rem 0;
   }
 
   .invitation-card-wrapper {
-    flex-direction: column;     /* 🔑 mobile: vertical */
-   /* gap: 2.5rem;*/
+    flex-direction: column;
+    align-items: center;
   }
 
+  /* 🔥 LA CLAVE */
   .invitation-card {
-    width: 288vw;
-    max-width: 680px;
+    width: 150vw;          /* 🔑 más grande que la pantalla */
+    max-width: none;
     min-width: unset;
+
+    position: relative;
+    left: 0%;
+    transform: translateX(-50%);
   }
 
   .invitation-rsvp {
     width: 88vw;
     max-width: 360px;
     min-width: unset;
+    margin-top: 0; /* opcional: acerca RSVP a la carta */
   }
 }
