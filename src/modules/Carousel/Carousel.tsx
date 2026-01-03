@@ -23,14 +23,24 @@ const Carousel = () => {
         {/* Primera tanda */}
         {images.map((img, i) => (
           <div className="carousel-item" key={`a-${i}`}>
-            <img src={img} alt={`Slide ${i + 1}`} />
+            <img 
+                src={img} 
+                alt={`Slide ${i + 1}`}
+                loading="lazy"
+                decoding="async"
+            />
           </div>
         ))}
 
         {/* Segunda tanda (para loop infinito) */}
         {images.map((img, i) => (
           <div className="carousel-item" key={`b-${i}`}>
-            <img src={img} alt={`Slide ${i + 1}`} />
+            <img 
+                src={img} 
+                alt={`Slide ${i + 1}`}
+                loading="lazy"
+                decoding="async"
+            />
           </div>
         ))}
       </div>
