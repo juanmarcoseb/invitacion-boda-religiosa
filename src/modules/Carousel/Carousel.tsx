@@ -19,30 +19,18 @@ const images = [
 const Carousel = () => {
   return (
     <section className="carousel">
-      <div className="carousel-track">
-        {/* Primera tanda */}
-        {images.map((img, i) => (
-          <div className="carousel-item" key={`a-${i}`}>
-            <img 
-                src={img} 
-                alt={`Slide ${i + 1}`}
-                decoding="async"
-            />
-          </div>
-        ))}
-
-        {/* Segunda tanda (para loop infinito) */}
-        {images.map((img, i) => (
-          <div className="carousel-item" key={`b-${i}`}>
-            <img 
-                src={img} 
-                alt={`Slide ${i + 1}`}
-                decoding="async"
-            />
-          </div>
-        ))}
+      <div className="carousel-viewport">
+        <div className="carousel-track">
+          {images.concat(images).map((img, i) => (
+            <div className="carousel-item" key={i}>
+              <img src={img} alt={`Slide ${i + 1}`} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
+
+
   )
 }
 
