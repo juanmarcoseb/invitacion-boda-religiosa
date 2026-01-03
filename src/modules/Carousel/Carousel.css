@@ -1,23 +1,21 @@
 .carousel {
-  --carousel-height: 100vh; /* desktop default */
-
   width: 100%;
-  height: var(--carousel-height);
+  height: 100vh;              /* desktop */
   overflow: hidden;
   background-color: #000;
+
   display: flex;
   align-items: center;
   position: relative;
 }
 
-/* Track animado */
+/* Track */
 .carousel-track {
   display: flex;
-  gap: 0;
   animation: scroll 45s linear infinite;
 
   will-change: transform;
-  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
 }
 
 /* Item */
@@ -27,27 +25,27 @@
   align-items: center;
 }
 
-/* Imagen */
+/* 🚨 CLAVE: NO vh AQUÍ */
 .carousel-item img {
-  height: var(--carousel-height); /* 🔑 CLAVE */
+  height: 100%;
   width: auto;
-  object-fit: contain;
   display: block;
+  object-fit: contain;
 }
 
-/* Animación infinita */
+/* Animación */
 @keyframes scroll {
   from {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
   to {
-    transform: translate3d(-50%, 0, 0);
+    transform: translateX(-50%);
   }
 }
 
-/* 📱 Mobile (iOS fix real) */
+/* 📱 Mobile */
 @media (max-width: 768px) {
   .carousel {
-    --carousel-height: 90svh; /* 🔥 viewport seguro */
+    height: 90vh;   /* solo aquí se usa vh */
   }
 }
