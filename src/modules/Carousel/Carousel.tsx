@@ -26,7 +26,6 @@ const Carousel = () => {
             <img 
                 src={img} 
                 alt={`Slide ${i + 1}`}
-                loading="lazy"
                 decoding="async"
             />
           </div>
@@ -38,7 +37,6 @@ const Carousel = () => {
             <img 
                 src={img} 
                 alt={`Slide ${i + 1}`}
-                loading="lazy"
                 decoding="async"
             />
           </div>
