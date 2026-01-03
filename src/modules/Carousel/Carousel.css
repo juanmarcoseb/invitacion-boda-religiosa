@@ -1,6 +1,8 @@
 .carousel {
+  --carousel-height: 100vh; /* desktop default */
+
   width: 100%;
-  height: 100vh;              /* desktop */
+  height: var(--carousel-height);
   overflow: hidden;
   background-color: #000;
   display: flex;
@@ -8,17 +10,17 @@
   position: relative;
 }
 
-/* Track que se mueve */
+/* Track animado */
 .carousel-track {
   display: flex;
   gap: 0;
   animation: scroll 45s linear infinite;
 
-  will-change: transform;          /* 🔑 fix iOS */
-  transform: translate3d(0, 0, 0); /* 🔑 fuerza GPU */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
-/* Cada item */
+/* Item */
 .carousel-item {
   flex: 0 0 auto;
   display: flex;
@@ -27,13 +29,13 @@
 
 /* Imagen */
 .carousel-item img {
-  height: 100vh;          /* 🔑 CLAVE */
+  height: var(--carousel-height); /* 🔑 CLAVE */
   width: auto;
   object-fit: contain;
   display: block;
 }
 
-/* Animación */
+/* Animación infinita */
 @keyframes scroll {
   from {
     transform: translate3d(0, 0, 0);
@@ -43,9 +45,9 @@
   }
 }
 
-/* 📱 Mobile */
+/* 📱 Mobile (iOS fix real) */
 @media (max-width: 768px) {
   .carousel {
-    height: 90svh;   /* 🔑 usa viewport seguro en mobile */
+    --carousel-height: 90svh; /* 🔥 viewport seguro */
   }
 }
