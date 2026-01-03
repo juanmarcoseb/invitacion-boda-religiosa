@@ -1,49 +1,43 @@
 .carousel {
   width: 100%;
-  height: 100svh;
+  height: 85svh;
   background: #000;
   display: flex;
   align-items: center;
 }
 
-/* 🔑 viewport NO animado */
 .carousel-viewport {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: relative;
 }
 
-/* 🔥 SOLO este se anima */
 .carousel-track {
   display: flex;
   height: 100%;
   width: max-content;
 
-  animation: scroll 25s linear infinite;
+  animation: scroll 45s linear infinite;
   transform: translate3d(0,0,0);
+  will-change: transform;
 }
 
-/* items */
 .carousel-item {
   flex: 0 0 auto;
   height: 100%;
   display: flex;
   align-items: center;
-  white-space: nowrap;
 }
 
-/* imagen */
 .carousel-item img {
   height: 100%;
   width: auto;
-  display: block;
   object-fit: contain;
+  display: block;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
-/* animación */
+/* loop infinito limpio */
 @keyframes scroll {
   from {
     transform: translate3d(0,0,0);
@@ -56,11 +50,6 @@
 /* Mobile */
 @media (max-width: 768px) {
   .carousel-track {
-    animation-duration: 35s;
+    animation-duration: 60s;
   }
-
-  .carousel {
-  height: 85svh;
 }
-}
-
