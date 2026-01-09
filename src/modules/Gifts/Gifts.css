@@ -1,0 +1,198 @@
+.gifts {
+  width: 100%;
+  min-height: 100vh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+/* 🟢 TARJETA VERDE */
+.gifts-card {
+  width: 100%;
+  max-width: 1100px;
+  
+  aspect-ratio: 16 / 9;
+  
+  background-color: #3c3d1a;
+  
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  /* ⬇️ oculto hasta scroll */
+  opacity: 0;
+}
+
+/* 🎀 MOÑO */
+.gifts-bow {
+  position: absolute;
+  top: 62px;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 320px;
+  height: auto;
+
+  pointer-events: none;
+
+  /* flota siempre (decorativo) */
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Contenido interno */
+.gifts-content {
+  margin-top: 5rem;
+  text-align: center;
+  color: #fff;
+
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Título */
+.gifts-title {
+  font-size: clamp(5rem, 8vw, 6.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+
+  margin-bottom: 1.5rem;
+
+  opacity: 0;
+}
+
+/* Texto */
+.gifts-text {
+  font-size: clamp(1.4rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+
+  max-width: 840px;
+  margin: 0 auto;
+  opacity: 0;
+}
+
+/* 🎁 BOTONES DE REGALOS */
+.gifts-buttons {
+  display: flex;
+  gap: 2.5rem;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 4rem;
+
+  opacity: 0;
+}
+
+.gifts-buttons img {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gifts-buttons a:hover img {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+.gifts-buttons a {
+  display: inline-block;
+}
+
+.gifts-buttons a:active img {
+  transform: scale(0.97);
+}
+
+/* ✨ ANIMACIONES ACTIVADAS POR SCROLL */
+.gifts.is-visible .gifts-card {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+.gifts.is-visible .gifts-title {
+  animation: fadeUp 0.8s ease-out both;
+  animation-delay: 0.2s;
+}
+
+.gifts.is-visible .gifts-text {
+  animation: fadeUp 0.8s ease-out both;
+  animation-delay: 0.4s;
+}
+
+.gifts.is-visible .gifts-buttons {
+  animation: fadeUp 0.8s ease-out both;
+  animation-delay: 0.6s;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .gifts-card {
+    aspect-ratio: auto;
+    min-height: 90svh;
+  }
+
+  .gifts-bow {
+    width: 200px;
+  }
+
+  .gifts-content {
+    margin-top: 5rem;
+  }
+
+  .gifts-title {
+    font-size: clamp(3.8rem, 6vw, 4.8rem);
+    margin-bottom: 5rem;
+  }
+
+  .gifts-text {
+    font-size: clamp(1.3rem, 2.5vw, 1.25rem);
+  }
+
+  .gifts-buttons {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .gifts-buttons img {
+    width: 260px;
+  }
+}
+
+/* 🎬 ANIMACIONES BASE */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-6px); }
+  100% { transform: translate(-50%, -50%) translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
