@@ -146,10 +146,11 @@
 
   .gifts-bow {
     width: 200px;
+    margin-bottom: 1.5rem;
   }
 
   .gifts-content {
-    margin-top: 8rem;
+    margin-top: 10rem;
   }
 
   .gifts-title {
