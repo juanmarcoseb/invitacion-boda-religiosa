@@ -1,7 +1,7 @@
 import "./Invitation.css"
 import { motion } from "framer-motion"
-import cardImage from "../../assets/invitation/card.png"
-import rsvpImage from "../../assets/invitation/rsvp.png"
+import cardImage from "../../assets/invitation/card.webp"
+import rsvpImage from "../../assets/invitation/rsvp.webp"
 
 const Invitation = () => {
   return (
