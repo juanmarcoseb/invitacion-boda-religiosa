@@ -43,12 +43,30 @@ const Hero = () => {
   // 2. Crear una referencia al elemento de video
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
+  /*useEffect(() => {
     // 3. Forzar el play cuando el componente cargue
     if (videoRef.current) {
       videoRef.current.play().catch(error => {
         console.error("El autoplay fue bloqueado por el navegador:", error);
       });
+    }
+  }, []);*/
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Forzamos el mute explícitamente por código
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      
+      // Intentamos reproducir
+      const promise = videoRef.current.play();
+      if (promise !== undefined) {
+        promise.catch(error => {
+          // AUTO-DETECCIÓN DEL ERROR
+          console.log("Error de reproducción:", error.name);
+          // Si sale "NotAllowedError", es bloqueo del navegador
+        });
+      }
     }
   }, []);
 
