@@ -6,7 +6,7 @@ const Carousel: React.FC = () => {
   const images = Array.from({ length: 10 }, (_, i) => {
     const skip = i + 1;
     const photoNumber = skip < 10 ? `0${skip}` : `${skip}`;
-    return `/src/assets/carousel/photo-${photoNumber}.webp`;
+    return `/carousel/photo-${photoNumber}.webp`;
   });
 
   // Duplicamos el array para el efecto de loop infinito visual
