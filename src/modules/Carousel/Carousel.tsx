@@ -14,7 +14,7 @@ const Carousel: React.FC = () => {
 
   return (
     <div className="carousel-container">
-      <div className="carousel-track">
+      <div className="carousel-tracks">
         {doubleImages.map((src, index) => (
           <div className="carousel-slide" key={index}>
             <img 
