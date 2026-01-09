@@ -71,7 +71,12 @@
   }
 
   .carousel-track {
+    display: flex;
     flex-direction: row;
+    animation-duration: 14s;
+    width: max-content;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   .carousel img {
