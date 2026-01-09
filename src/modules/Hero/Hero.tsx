@@ -73,15 +73,20 @@ const Hero = () => {
   return (
     <section className="hero">
       <video
-        ref={videoRef} // 4. Asignar la referencia
+        ref={videoRef}
         className="hero-video"
-        src={heroVideo}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto" // Sugerencia extra para que cargue antes
-      />
+        // Agregamos estos:
+        controls={false}      // Forzamos a que no haya controles
+        disablePictureInPicture
+        preload="auto"
+      >
+        <source src={heroVideo} type="video/webm" />
+        {/* Agrega aquí una versión .mp4 si puedes, es el salvavidas de Safari */}
+      </video>
 
       <div className="hero-overlay" />
 
