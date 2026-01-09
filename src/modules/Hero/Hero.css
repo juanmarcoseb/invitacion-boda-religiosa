@@ -115,3 +115,14 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
+
+/* Ocultar el botón de play nativo en iOS/Safari y Chrome */
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* En algunos casos, esto también ayuda */
+video::-webkit-media-controls {
+  display: none !important;
+}
