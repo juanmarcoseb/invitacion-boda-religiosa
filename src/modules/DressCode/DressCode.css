@@ -1,0 +1,209 @@
+.dresscode {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #f6f2eb;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+/* Contenedor interno */
+.dresscode-container {
+  width: 100%;
+  max-width: 1200px;
+
+  min-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Título */
+.dresscode-title {
+  font-size: clamp(3.8rem, 7vw, 6rem);
+  font-weight: 600;
+
+  color: #111;
+  text-align: center;
+
+  margin-bottom: 4rem;
+}
+
+/* Texto descriptivo */
+.dresscode-text {
+  max-width: 900px;
+  margin: 0 auto;
+
+  font-size: clamp(1.2rem, 2vw, 1.2rem);
+  line-height: 1.6;
+
+  color: #111;
+  text-align: left;
+
+  opacity: 0.9;
+}
+
+/* 🎨 Paleta */
+.dresscode-palette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 3rem;
+}
+
+.palette-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+
+  border: 3px solid #fff;
+  margin-left: -14px;
+
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+
+  cursor: pointer;
+  background: none;
+}
+
+/* El primero no se encima */
+.palette-circle:first-child {
+  margin-left: 0;
+}
+
+.palette-circle:hover {
+  transform: scale(1.05);
+}
+
+.palette-circle:active {
+  transform: scale(0.95);
+}
+
+.dresscode-hint {
+  margin-top: 1.2rem;
+
+  font-size: clamp(1rem, 1vw, 1rem);
+  font-style: italic;
+
+  color: #111;
+  text-align: center;
+
+  opacity: 0.6;
+}
+
+.dresscode-note {
+  max-width: 900px;
+  margin: 3rem auto 0;
+
+  font-size: clamp(1.2rem, 2vw, 1.2rem);
+  line-height: 1.6;
+
+  color: #111;
+  text-align: left;
+
+  opacity: 0.9;
+}
+
+.dresscode-note strong {
+  font-weight: 600;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .palette-circle {
+    width: 68px;
+    height: 68px;
+    margin-left: -12px;
+  }
+}
+
+/* 🎨 Colores */
+.color-1 { background-color: #100557; }
+.color-2 { background-color: #3c7882; }
+.color-3 { background-color: #102820; }
+.color-4 { background-color: #5c6e54; }
+.color-5 { background-color: #582f0e; }
+.color-6 { background-color: #936639; }
+
+/* 🪟 MODAL */
+.dresscode-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  animation: overlayFadeIn 0.35s ease-out both;
+}
+
+
+.dresscode-modal {
+  width: 90%;
+  max-width: 1000px;
+  max-height: 85vh;
+
+  background: #f6f2eb;
+  border-radius: 18px;
+
+  padding: 3rem;
+  position: relative;
+
+  overflow-y: auto;
+  animation: modalEnter 0.45s cubic-bezier(.22,.61,.36,1) both;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  background: none;
+  border: none;
+
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}
+
+/*.modal-title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #111
+}*/
+
+.modal-placeholder {
+  text-align: center;
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+

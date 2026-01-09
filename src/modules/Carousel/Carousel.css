@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.carousel-track {
+.carousel-tracks {
   display: flex;
   width: calc(250px * 20); /* Ajuste basado en el ancho de la imagen x total (10+10) */
   animation: scroll 20s linear infinite;
@@ -49,7 +49,7 @@
     height: 700px;
   }
   
-  .carousel-track {
+  .carousel-tracks {
     width: calc(450px * 20);
     animation: scroll-pc 25s linear infinite; /* Un poco más lento por ser más grande */
   }
@@ -67,7 +67,7 @@
     height: 900px;
   }
   
-  .carousel-track {
+  .carousel-tracks {
     width: calc(350px * 20);
   }
 
