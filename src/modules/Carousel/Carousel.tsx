@@ -1,37 +1,32 @@
-import "./Carousel.css"
+import React from 'react';
+import './Carousel.css';
 
-import img1 from "../../assets/carousel/photo-01.webp"
-import img2 from "../../assets/carousel/photo-02.webp"
-import img3 from "../../assets/carousel/photo-03.webp"
-import img4 from "../../assets/carousel/photo-04.webp"
-import img5 from "../../assets/carousel/photo-05.webp"
-import img6 from "../../assets/carousel/photo-06.webp"
-import img7 from "../../assets/carousel/photo-07.webp"
-import img8 from "../../assets/carousel/photo-08.webp"
-import img9 from "../../assets/carousel/photo-09.webp"
-import img10 from "../../assets/carousel/photo-10.webp"
+const Carousel: React.FC = () => {
+  // Generamos el array de nombres de fotos del 01 al 10
+  const images = Array.from({ length: 10 }, (_, i) => {
+    const skip = i + 1;
+    const photoNumber = skip < 10 ? `0${skip}` : `${skip}`;
+    return `/src/assets/carousel/photo-${photoNumber}.webp`;
+  });
 
-const images = [
-  img1, img2, img3, img4, img5,
-  img6, img7, img8, img9, img10,
-]
+  // Duplicamos el array para el efecto de loop infinito visual
+  const doubleImages = [...images, ...images];
 
-const Carousel = () => {
   return (
-    <section className="carousel">
-      <div className="carousel-viewport">
-        <div className="carousel-track">
-          {images.concat(images).map((img, i) => (
-            <div className="carousel-item" key={i}>
-              <img src={img} alt={`Slide ${i + 1}`} />
-            </div>
-          ))}
-        </div>
+    <div className="carousel-container">
+      <div className="carousel-track">
+        {doubleImages.map((src, index) => (
+          <div className="carousel-slide" key={index}>
+            <img 
+              src={src} 
+              alt={`Invitación foto ${index + 1}`} 
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
+  );
+};
 
-
-  )
-}
-
-export default Carousel
+export default Carousel;
