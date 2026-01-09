@@ -75,7 +75,7 @@
 
 /* Texto */
 .gifts-text {
-  font-size: clamp(1.4rem, 2.5vw, 1.25rem);
+  font-size: clamp(1.2rem, 2vw, 1.2rem);
   line-height: 1.6;
 
   max-width: 840px;
@@ -159,7 +159,7 @@
   }
 
   .gifts-text {
-    font-size: clamp(1.3rem, 2.5vw, 1.25rem);
+    font-size: clamp(1.2rem, 2vw, 1.2rem);
   }
 
   .gifts-buttons {
