@@ -1,8 +1,8 @@
 import "./Hero.css"
 
-import heroVideo from "../../assets/hero/hero-video.mov"
-import logo from "../../assets/hero/logo.png"
-import titleGroup from "../../assets/hero/hero-title-group.png"
+import heroVideo from "../../assets/hero/hero-video.webm"
+import logo from "../../assets/hero/logo.webp"
+import titleGroup from "../../assets/hero/hero-title-group.webp"
 
 const Hero = () => {
   return (

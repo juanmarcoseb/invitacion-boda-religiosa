@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import "./Countdown.css"
-import backgroundImage from "../../assets/countdown/background.jpg"
+import backgroundImage from "../../assets/countdown/background.webp"
 
 const targetDate = new Date("2026-03-15T15:00:00")
 
