@@ -5,13 +5,30 @@
   position: relative;
   display: flex;
   align-items: center;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
+.carousel-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .carousel-tracks {
   display: flex;
   width: 100%; /* Ajuste basado en el ancho de la imagen x total (10+10) */
   animation: scroll 20s linear infinite;
+
+  animation-play-state: paused;
 }
+
+.carousel-container.is-visible .carousel-tracks {
+  animation-play-state: running;
+}
+
 
 .carousel-slide {
   height: 700px;
