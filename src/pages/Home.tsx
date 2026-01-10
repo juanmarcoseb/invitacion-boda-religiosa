@@ -4,6 +4,7 @@ import DressCode from "../modules/DressCode/DressCode"
 import Gifts from "../modules/Gifts/Gifts"
 import Hero from "../modules/Hero/Hero"
 import Invitation from "../modules/Invitation/Invitation"
+import Location from "../modules/Location/Location"
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Gifts />
       <Carousel />
       <DressCode />
+      <Location />
       <Countdown />
     </>
   )
