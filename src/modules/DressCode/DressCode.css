@@ -24,6 +24,47 @@
   justify-content: center;
 }
 
+.dresscode-container > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.dresscode.is-visible .dresscode-title {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.dresscode.is-visible .dresscode-text {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.15s;
+}
+
+.dresscode.is-visible .dresscode-palette {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.dresscode.is-visible .dresscode-hint {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.45s;
+}
+
+.dresscode.is-visible .dresscode-note {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* Título */
 .dresscode-title {
   font-size: clamp(3.8rem, 7vw, 6rem);

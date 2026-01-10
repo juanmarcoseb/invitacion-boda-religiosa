@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import "./DressCode.css"
 
 import ColorModal1 from "./modals/ColorModal1"
@@ -10,29 +10,44 @@ import ColorModal6 from "./modals/ColorModal6"
 
 const DressCode = () => {
   const [activeColor, setActiveColor] = useState<string | null>(null)
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.2 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const renderModalContent = () => {
     switch (activeColor) {
-        case "color-1":
-        return <ColorModal1 />
-        case "color-2":
-        return <ColorModal2 />
-        case "color-3":
-        return <ColorModal3 />
-        case "color-4":
-        return <ColorModal4 />
-        case "color-5":
-        return <ColorModal5 />
-        case "color-6":
-        return <ColorModal6 />
-        default:
-        return null
+      case "color-1": return <ColorModal1 />
+      case "color-2": return <ColorModal2 />
+      case "color-3": return <ColorModal3 />
+      case "color-4": return <ColorModal4 />
+      case "color-5": return <ColorModal5 />
+      case "color-6": return <ColorModal6 />
+      default: return null
     }
-    }
-
+  }
 
   return (
-    <section className="dresscode">
+    <section
+      ref={sectionRef}
+      className={`dresscode ${isVisible ? "is-visible" : ""}`}
+    >
       <div className="dresscode-container">
         <h2 className="dresscode-title">Código de Vestimenta</h2>
 
@@ -42,38 +57,13 @@ const DressCode = () => {
           <strong>Caballeros:</strong> smoking.
         </p>
 
-        {/* 🎨 PALETA */}
         <div className="dresscode-palette">
-          <button
-            className="palette-circle color-1"
-            aria-label="Inspiración color azul oscuro"
-            onClick={() => setActiveColor("color-1")}
-          />
-          <button
-            className="palette-circle color-2"
-            aria-label="Inspiración color azul verdoso"
-            onClick={() => setActiveColor("color-2")}
-          />
-          <button
-            className="palette-circle color-3"
-            aria-label="Inspiración color verde oscuro"
-            onClick={() => setActiveColor("color-3")}
-          />
-          <button
-            className="palette-circle color-4"
-            aria-label="Inspiración color verde oliva"
-            onClick={() => setActiveColor("color-4")}
-          />
-          <button
-            className="palette-circle color-5"
-            aria-label="Inspiración color café"
-            onClick={() => setActiveColor("color-5")}
-          />
-          <button
-            className="palette-circle color-6"
-            aria-label="Inspiración color beige"
-            onClick={() => setActiveColor("color-6")}
-          />
+          <button className="palette-circle color-1" aria-label="Inspiración color azul oscuro" onClick={() => setActiveColor("color-1")} />
+          <button className="palette-circle color-2" aria-label="Inspiración color azul verdoso" onClick={() => setActiveColor("color-2")} />
+          <button className="palette-circle color-3" aria-label="Inspiración color verde oscuro" onClick={() => setActiveColor("color-3")} />
+          <button className="palette-circle color-4" aria-label="Inspiración color verde oliva" onClick={() => setActiveColor("color-4")} />
+          <button className="palette-circle color-5" aria-label="Inspiración color café" onClick={() => setActiveColor("color-5")} />
+          <button className="palette-circle color-6" aria-label="Inspiración color beige" onClick={() => setActiveColor("color-6")} />
         </div>
 
         <p className="dresscode-hint">
@@ -92,27 +82,15 @@ const DressCode = () => {
         </p>
       </div>
 
-      {/* 🪟 MODAL */}
       {activeColor && (
-        <div
-          className="dresscode-modal-overlay"
-          onClick={() => setActiveColor(null)}
-        >
+        <div className="dresscode-modal-overlay" onClick={() => setActiveColor(null)}>
           <div
             key={activeColor}
             className="dresscode-modal"
             onClick={(e) => e.stopPropagation()}
           >
-
-            <button
-              className="modal-close"
-              onClick={() => setActiveColor(null)}
-            >
-              ✕
-            </button>
-          
+            <button className="modal-close" onClick={() => setActiveColor(null)}>✕</button>
             {renderModalContent()}
-
           </div>
         </div>
       )}
