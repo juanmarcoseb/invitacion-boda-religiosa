@@ -1,0 +1,149 @@
+.location {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #3c3d1a; /* verde */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🟡 MARCO CREMA DIBUJADO */
+.location::before {
+  content: "";
+  position: absolute;
+
+  top: 3rem;
+  bottom: 3rem;
+  left: 5rem;
+  right: 5rem;
+  /* ⬆️ AQUÍ controlas la separación del marco */
+
+  border: 10px solid #f5f1e8; /* crema delgado */
+
+  pointer-events: none; /* importante */
+}
+
+/* CONTENIDO */
+.location-container {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1100px;
+
+  padding: 4rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.location-title {
+  color: #f5f1e8; /* mismo color del borde */
+
+  font-size: clamp(3.8rem, 7vw, 6rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+
+  margin-bottom: 2.5rem;
+
+  text-align: center;
+}
+
+.location-place {
+  color: #f5f1e8; /* mismo color crema */
+
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.location-links {
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.location-links-title {
+  color: #f5f1e8;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.location-links-icons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.location-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-decoration: none;
+  color: #f5f1e8;
+
+  transition: transform 0.3s ease;
+}
+
+.location-link:hover {
+  transform: translateY(-4px);
+}
+
+.location-link img {
+  width: 128px;   /* AQUÍ controlas el tamaño visual */
+  height: 128px;
+
+  margin-bottom: 0.5rem;
+}
+
+.location-link span {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.location-illustration {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 3rem auto 0;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .location::before {
+    top: 2rem;
+    bottom: 2rem;
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .location-container {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .location-links-icons {
+    gap: 2rem;
+  }
+
+  .location-link img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+
