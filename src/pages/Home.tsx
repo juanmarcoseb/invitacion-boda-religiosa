@@ -11,7 +11,9 @@ const Home = () => {
     <>
       <Hero />
       <Invitation />
-      <Gifts />
+      <section id="gifts">
+        <Gifts />
+      </section>
       <Carousel />
       <DressCode />
       <Location />

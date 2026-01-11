@@ -248,3 +248,20 @@
   }
 }
 
+/* 🔧 FIX DEFINITIVO PARA TILDES EN FONTS SCRIPT */
+.dresscode,
+.dresscode * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.accent-fix {
+  font-family: "Tenor Sans", system-ui, sans-serif;
+  font-size: 1em;
+  font-weight: inherit;
+  line-height: inherit;
+  vertical-align: baseline;
+}
