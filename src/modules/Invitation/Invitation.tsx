@@ -2,6 +2,7 @@ import "./Invitation.css"
 import { motion } from "framer-motion"
 import cardImage from "../../assets/invitation/card.webp"
 import rsvpImage from "../../assets/invitation/rsvp.webp"
+import { Link } from "react-router-dom"
 
 const Invitation = () => {
   return (
@@ -19,19 +20,22 @@ const Invitation = () => {
         />
 
         {/* RSVP */}
-        <motion.img
-          src={rsvpImage}
-          alt="RSVP Information"
-          className="invitation-rsvp"
-          initial={{ opacity: 0, x: 60, scale: 0.96 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{
-            duration: 0.9,
-            delay: 0.2,
-            ease: "easeOut",
-          }}
-          viewport={{ once: true }}
-        />
+        <Link to="/rsvp">
+          <motion.img
+            src={rsvpImage}
+            alt="RSVP Information"
+            className="invitation-rsvp"
+            initial={{ opacity: 0, x: 60, scale: 0.96 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{
+              duration: 0.9,
+              delay: 0.2,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            style={{ cursor: "pointer" }}
+          />
+        </Link>
       </div>
     </section>
   )

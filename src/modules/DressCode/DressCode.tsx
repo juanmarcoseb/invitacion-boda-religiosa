@@ -52,8 +52,8 @@ const DressCode = () => {
         <h2 className="dresscode-title">Código de Vestimenta</h2>
 
         <p className="dresscode-text">
-          Formal y elegante, acorde a la ocasión.<br />
-          <strong>Damas:</strong> vestido largo. Sugerimos tacón ancho debido a que la celebración se realizará en jardín.<br />
+          Formal y elegante, acorde a la ocasi<span className="accent-fix">ó</span>n.<br />
+          <strong>Damas:</strong> vestido largo. Sugerimos tac<span className="accent-fix">ó</span>n ancho debido a que la celebraci<span className="accent-fix">ó</span>n se realizar<span className="accent-fix">á</span> en jardín.<br />
           <strong>Caballeros:</strong> smoking.
         </p>
 
@@ -67,18 +67,18 @@ const DressCode = () => {
         </div>
 
         <p className="dresscode-hint">
-          Presiona el color de tu interés para ver inspiración
+          Presiona el color de tu inter<span className="accent-fix">é</span>s para ver inspiraci<span className="accent-fix">ó</span>n
         </p>
 
         <p className="dresscode-note">
           Agradecemos de manera especial{" "}
           <strong>no portar vestidos en tonos blancos, claros o similares</strong>, ya
-          que estos colores están reservados exclusivamente para la novia.
+          que estos colores est<span className="accent-fix">á</span>n reservados exclusivamente para la novia.
           <br />
           Asimismo, solicitamos evitar los colores rojo y negro.
           <br /><br />
-          Hemos preparado una selección de outfits de referencia para orientar tu
-          elección.
+          Hemos preparado una selecci<span className="accent-fix">ó</span>n de outfits de referencia para orientar tu
+          elecci<span className="accent-fix">ó</span>n.
         </p>
       </div>
 
