@@ -45,12 +45,14 @@
 /* ===================== WRAPPER ===================== */
 .wrapper {
   width: 100%;
-  min-height: 100svh;
+  height: 100svh;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
   background-color: var(--rsvp-bg);
+  overflow-y: auto;
 }
 
 
